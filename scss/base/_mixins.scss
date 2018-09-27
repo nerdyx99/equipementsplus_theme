@@ -1,0 +1,27 @@
+// @file
+// Place your mixins here. Feel free to roll your own mixins.
+
+
+@mixin bgImageTransition{
+	-webkit-transition: background-image 300ms linear;
+	-moz-transition: background-image 300ms linear;
+	transition: background-image 300ms linear;
+}
+
+@mixin opacityTransition{
+	-webkit-transition: opacity 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out;
+	transition: opacity 300ms ease-out;
+}
+
+@mixin bgColorTransition{
+	-webkit-transition: background-color 300ms ease-out;
+	-moz-transition: background-color 300ms ease-out;
+	transition: background-color 300ms ease-out;
+}
+
+@mixin fontColorTransition{
+	-webkit-transition: color 300ms ease-out;
+	-moz-transition: color 300ms ease-out;
+	transition: color 300ms ease-out;
+}

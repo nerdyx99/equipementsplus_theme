@@ -1,0 +1,84 @@
+// Non-modular or client styles for .l-header region.
+
+.top{
+	background-color: #111;
+	padding:5px 0;
+	.block-block-1, .block-block-2{
+		p{
+			float:right;
+			font-size: 0.8rem;
+			margin:0;
+			color:$white;
+		}
+	}
+}
+
+header{
+	background-color:$black;
+	.top-bar{
+		line-height: normal!important;
+		height:auto!important;
+		.name{
+			height:auto;
+			margin:20px 0;
+		}
+
+		#main-menu{
+			float:right!important;
+			margin-top: 70px;
+			.en.active, .fr.active{
+				display: none;
+			}
+			li{
+				text-transform: uppercase;
+				border-right:1px solid #525252;
+				a{
+					color:darken($white, 40%);
+					&:hover{
+						color:darken($white, 20%);
+					}
+				}
+				a.active{
+					color:$white;
+					&:hover{
+						color:darken($white, 20%);
+					}
+				}
+			}
+			li.last{
+				border-right:none;
+			}
+			li.en, li.fr{
+				border:none;
+				margin-left:20px;
+				a{
+					// padding-right:0!important;
+					// margin-right:0!important;
+					background-color:rgba(255,255,255,0.1);
+					border-radius: 15px;
+					padding:0 15px;
+				}
+
+			}
+		}
+	}
+
+	
+}
+
+.block-locale-language{
+	h2{
+		display: none;
+	}
+	
+}
+
+.logged-in{
+	.shopping-cart{
+		.menu{
+			.first{
+				display: none;
+			}
+		}
+	}
+}

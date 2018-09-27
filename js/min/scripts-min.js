@@ -1,0 +1,1 @@
+!function($,a){a.behaviors.STARTER={attach:function(a,e){$("#main-menu").append($(".language-switcher-locale-url li")),$(".block-locale-language").remove()}}}(jQuery,Drupal);
