@@ -7,7 +7,7 @@ function ep_preprocess(&$variables, $hook){
 
 function ep_preprocess_node(&$variables) {
     if ($variables['view_mode'] === "teaser" && $variables['type'] === 'new_equipments') {
-        $variables['content']['company_logo'] = file_create_url($variables['field_image'][0]['uri']);
+        $variables['content']['company_logo'] = (!empty($variables['field_image'][0]['uri']) ? file_create_url($variables['field_image'][0]['uri']) : "");
         $variables['content']['company_tag_line'] = "represents these brands:";
         if ($variables['language'] === 'fr') {
             $variables['content']['company_tag_line'] = "répresente ces compagnies :";
@@ -17,8 +17,8 @@ function ep_preprocess_node(&$variables) {
             $company_object = entity_load('field_collection_item', array($company_id));
             foreach ($company_object as $object) {
                 $variables['content']['company'][] = array(
-                    'url' => $object->field_website_url[LANGUAGE_NONE][0]['url'],
-                    'image' => file_create_url($object->field_image[LANGUAGE_NONE][0]['uri']),
+                    'url' => (!empty($object->field_website_url[LANGUAGE_NONE][0]['url']) ? $object->field_website_url[LANGUAGE_NONE][0]['url'] : ""),
+                    'image' => (!empty($object->field_image[LANGUAGE_NONE][0]['uri']) ? file_create_url($object->field_image[LANGUAGE_NONE][0]['uri']) : ""),
                 );
             }
         }
@@ -54,6 +54,9 @@ function ep_form_contact_site_form_alter(&$form, &$form_state) {
 }
 
 function ep_preprocess_views_view_unformatted(&$variables) {
+    if ($variables['view']->name !== "new_equipments") {
+        return FALSE;
+    }
     foreach ($variables['classes_array'] as $key => $classes) {
         $variables['classes_array'][$key] .= " small-4 large-4 columns";
     }
