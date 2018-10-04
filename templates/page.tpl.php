@@ -115,9 +115,8 @@
     <!--/.featured -->
     <section class="l-featuredProducts">
       <div class="row">
-        <div class="medium-4 columns"><?php print render($page['featured_products_1']); ?></div>
-        <div class="medium-4 columns"><?php print render($page['featured_products_2']); ?></div>
-        <div class="medium-4 columns"><?php print render($page['featured_products_3']); ?></div>
+        <div class="medium-6 columns"><?php print render($page['featured_products_1']); ?></div>
+        <div class="medium-6 columns"><?php print render($page['featured_products_2']); ?></div>
       </div>
     </section>
     <!--/.l-featured -->
